@@ -1,0 +1,54 @@
+% Zur direkten Verwendung mit LaTeX - z.B. in Arbeiten an der/über die HTW selbst
+%\includestandalone%[width=.8\textwidth]
+%{htw-logo.tex}
+
+% Beginn der Präambel
+\documentclass{standalone}
+
+% Einstellungen und Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{tikz}
+\usepackage{environ}
+
+\makeatletter
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[1]{%
+  \def\tikz@width{#1}%
+  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+  \BODY
+  \end{lrbox}%
+  \pgfmathparse{#1/\wd\measure@tikzpicture}%
+  \edef\tikzscale{\pgfmathresult}%
+  \BODY
+}
+\NewEnviron{scaletikzpicturetoheight}[1]{%
+  \def\tikz@width{#1}%
+  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+  \BODY
+  \end{lrbox}%
+  \pgfmathparse{#1/\ht\measure@tikzpicture}%
+  \edef\tikzscale{\pgfmathresult}%
+  \BODY
+}
+\makeatother
+
+% Logo mit TikZ
+\newcommand{\logo}{
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw[black,fill=black] (0,0) -- (0,146) -- (29.5,146) -- (29.5,76) -- (88.5,76) -- (88.5,146) -- (159,146) -- (159,0) -- (130,0) -- (130,140) -- (94.5,140) -- (94.5,0) -- (88.5,0) -- (88.5,70) -- (29.5,70) -- (29.5,0) -- cycle;
+        \draw[black,fill=black] (189,0) -- (189,146) -- (233,146) -- (233,140) -- (195,140) -- (195,10.5) -- (271.5,146) -- (303,146) -- (220.5,0) -- cycle;
+        \draw[orange,fill=orange] (253.5,0) -- (336,146) -- (367,146) -- (285.5,0) -- cycle;
+    \end{tikzpicture}
+}
+% Ende der Präambel
+
+% Jetzt der Inhalt des Dokumentes
+\begin{document}
+
+    \begin{scaletikzpicturetowidth}{\textwidth}
+        \logo{}
+    \end{scaletikzpicturetowidth}
+
+\end{document}
+% Ende des Dokumentes
