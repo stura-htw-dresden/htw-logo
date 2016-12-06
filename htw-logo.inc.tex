@@ -1,13 +1,8 @@
 % Zur direkten Verwendung mit LaTeX - z.B. in Arbeiten an der/über die HTW selbst
-%\includestandalone%[width=.8\textwidth]
-%{htw-logo.tex}
+% mit
+%\input{htw-logo.inc}
+% s.a. Beispiel htw-logo.demo.tex
 
-% Beginn der Präambel
-\documentclass{standalone}
-
-% Einstellungen und Pakete
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
 \usepackage{tikz}
 \usepackage{environ}
 
@@ -41,14 +36,3 @@
         \draw[orange,fill=orange] (253.5,0) -- (336,146) -- (367,146) -- (285.5,0) -- cycle;
     \end{tikzpicture}
 }
-% Ende der Präambel
-
-% Jetzt der Inhalt des Dokumentes
-\begin{document}
-
-    \begin{scaletikzpicturetowidth}{\textwidth}
-        \logo{}
-    \end{scaletikzpicturetowidth}
-
-\end{document}
-% Ende des Dokumentes

@@ -1,0 +1,30 @@
+% Zur direkten Verwendung mit LaTeX - z.B. in Arbeiten an der/über die HTW selbst
+%\includestandalone%[width=.8\textwidth]
+%{htw-logo.tex}
+
+% Beginn der Präambel
+\documentclass{standalone}
+
+% Einstellungen und Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% logo und Makros einbinden
+\input{htw-logo.inc}
+
+% Ende der Präambel
+
+% Jetzt der Inhalt des Dokumentes
+\begin{document}
+
+	% Logo in Breite des Textbereiches \textwidth
+	% alterativ auch:
+	%	10cm
+	%	1in
+	%	5em
+    \begin{scaletikzpicturetowidth}{\textwidth}
+        \logo{}
+    \end{scaletikzpicturetowidth}
+
+\end{document}
+% Ende des Dokumentes

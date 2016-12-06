@@ -17,8 +17,10 @@ Die folgenden Beispiele wurden auf *Debian GNU/Linux* getestet
 Innerhalb von LaTeX verwenden sich PDF-Dateien leicht mit [\includegraphics](http://golatex.de/wiki/index.php?title=\includegraphics):
 
 ```bash
-pdflatex htw-logo.tex
+pdflatex htw-logo.demo.tex
 ```
+
+Oder die `htw-logo.tex` wie in `htw-logo.demo.tex` demonstriert in das eigene TeX-Dokument einbinden und das Logo an entsprechender Stelle plazieren.
 
 ### Bsp. SVG zu PDF
 
@@ -33,4 +35,3 @@ Eine Bitmap-Grafik ([PNG](https://en.wikipedia.org/w/index.php?title=Portable_Ne
 ```bash
 inkscape -z -e htw-logo.png -w 512 htw-logo.svg
 ```
-
