@@ -1,6 +1,7 @@
-# HTW-Logo
+# Logo der HTW Dresden und Adaption des StuRa der HTW Dresden
 
 Das Logo der *HTW Dresden* zur weiteren Verwendung in Publikationen an der Hochschule.
+Zur vereinfachten Verwendung innerhlab der Teilkörperschaft, die der StuRa bezogen auf die Hochschule darstellt, auch dessen Adaption des Logos analog zu dem der Hochschule.
 
 ## Konvertierung zu anderen Dateitypen
 
@@ -14,13 +15,15 @@ Die folgenden Beispiele wurden auf *Debian GNU/Linux* getestet
 
 ### Bsp. TeX zu PDF
 
-Innerhalb von LaTeX verwenden sich PDF-Dateien leicht mit [\includegraphics](http://golatex.de/wiki/index.php?title=\includegraphics):
+Innerhalb von LaTeX verwenden sich PDF-Dateien leicht mit [\includegraphics](http://golatex.de/wiki/index.php?title=\includegraphics).
+Alternativ ist eine auf [TikZ](http://tikz.de/) basierende Umsetzung.
 
 ```bash
 pdflatex htw-logo.demo.tex
+pdflatex stura-logo.demo.tex
 ```
 
-Oder die `htw-logo.tex` wie in `htw-logo.demo.tex` demonstriert in das eigene TeX-Dokument einbinden und das Logo an entsprechender Stelle plazieren.
+Oder die `htw-logo.inc.tex` wie in `htw-logo.demo.tex` demonstriert in das eigene TeX-Dokument einbinden und das Logo an entsprechender Stelle plazieren.
 
 ### Bsp. SVG zu PDF
 
@@ -35,3 +38,19 @@ Eine Bitmap-Grafik ([PNG](https://en.wikipedia.org/w/index.php?title=Portable_Ne
 ```bash
 inkscape -z -e htw-logo.png -w 512 htw-logo.svg
 ```
+
+## HTW Farben
+
+Quelle: [Corporate Design der HTW Dresden](https://www.htw-dresden.de/intern/marketing/corporate-design.html)
+
+> Schwarz 
+
+Also gemeint wird RGB(0,0,0) bzw. CMYK(0,0,0,100) sein.
+
+> Orange CMYK  0/45/100/0 RGB 249/155/28
+> 
+> Blau CMYK 90/50/0/0
+>
+> Grau 60% Schwarz
+
+Blau und Grau werden u.a. auf der Website verwendet. Für das Logo eher uninteressant und hier nur der Vollständigkeit halber.
