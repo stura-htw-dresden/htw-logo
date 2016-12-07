@@ -4,35 +4,19 @@
 % s.a. Beispiel htw-logo.demo.tex
 
 \usepackage{tikz}
-\usepackage{environ}
 
-\makeatletter
-\newsavebox{\measure@tikzpicture}
-\NewEnviron{scaletikzpicturetowidth}[1]{%
-  \def\tikz@width{#1}%
-  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
-  \BODY
-  \end{lrbox}%
-  \pgfmathparse{#1/\wd\measure@tikzpicture}%
-  \edef\tikzscale{\pgfmathresult}%
-  \BODY
-}
-\NewEnviron{scaletikzpicturetoheight}[1]{%
-  \def\tikz@width{#1}%
-  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
-  \BODY
-  \end{lrbox}%
-  \pgfmathparse{#1/\ht\measure@tikzpicture}%
-  \edef\tikzscale{\pgfmathresult}%
-  \BODY
-}
-\makeatother
+% rgb: die Farbe wird als dreistelliger Vektor angegeben. Die Komponenten erhalten Werte zwischen 0 und 1 und stehen für rot, grün und blau.
+%~ \definecolor{schwarz}{RGB}{0,0,0}
+%~ \definecolor{htworange}{RGB}{240,172,43}
+% cmyk: die Farbe wird als vierstelliger Vektor angegeben. Die Komponenten erhalten Werte zwischen 0 und 1 und stehen für cyan, magenta, gelb und schwarz.
+\definecolor{schwarz}{cmyk}{0,0,0,100}
+\definecolor{htworange}{cmyk}{0,.41,.94,.03}
 
-% Logo mit TikZ
-\newcommand{\logo}{
-    \begin{tikzpicture}[scale=\tikzscale]
-        \draw[black,fill=black] (0,0) -- (0,146) -- (29.5,146) -- (29.5,76) -- (88.5,76) -- (88.5,146) -- (159,146) -- (159,0) -- (130,0) -- (130,140) -- (94.5,140) -- (94.5,0) -- (88.5,0) -- (88.5,70) -- (29.5,70) -- (29.5,0) -- cycle;
-        \draw[black,fill=black] (189,0) -- (189,146) -- (233,146) -- (233,140) -- (195,140) -- (195,10.5) -- (271.5,146) -- (303,146) -- (220.5,0) -- cycle;
-        \draw[orange,fill=orange] (253.5,0) -- (336,146) -- (367,146) -- (285.5,0) -- cycle;
-    \end{tikzpicture}
+% HTW Logo mit TikZ in Makro
+\newcommand{\htwlogo}{
+	\begin{tikzpicture}[scale=.01]
+		\path[fill=schwarz] (0,0) -- (0,146) -- (29.5,146) -- (29.5,76) -- (88.5,76) -- (88.5,146) -- (159,146) -- (159,0) -- (130,0) -- (130,140) -- (94.5,140) -- (94.5,0) -- (88.5,0) -- (88.5,70) -- (29.5,70) -- (29.5,0) -- cycle;
+		\path[fill=schwarz] (189,0) -- (189,146) -- (233,146) -- (233,140) -- (195,140) -- (195,10.5) -- (271.5,146) -- (303,146) -- (220.5,0) -- cycle;
+		\path[fill=htworange] (253.5,0) -- (336,146) -- (367,146) -- (285.5,0) -- cycle;
+	\end{tikzpicture}
 }
