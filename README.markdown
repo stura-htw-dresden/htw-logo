@@ -1,3 +1,7 @@
+## **HINWEIS**
+Die HTW hat einen Prozess zum Finden eines neuen "Logos" angestoßen.
+Daher ist die Aktualität vor Verwendung bitte stets erneut zu prüfen.
+
 # Logo der HTW Dresden und Adaption des StuRa der HTW Dresden
 
 Das Logo der *HTW Dresden* zur weiteren Verwendung in Publikationen an der Hochschule.
